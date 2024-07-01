@@ -1,0 +1,53 @@
+{
+  "name": "pr-file-search",
+  "displayName": "PR File Search",
+  "description": "Search files within PR changes",
+  "version": "0.1.3",
+  "publisher": "KeisukeTerada",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keisuke2236/pr-file-search.git"
+  },
+  "license": "MIT",
+  "activationEvents": [
+    "onCommand:pr-file-search.search"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "pr-file-search.search",
+        "title": "Search PR Files"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "pr-file-search.search",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+ctrl+p"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "test-compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0",
+    "@types/node": "^14.14.37",
+    "ts-loader": "^9.2.2",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
